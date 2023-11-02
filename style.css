@@ -6,7 +6,7 @@ animation: mymove 5s;
 
 @keyframes mymove{
     from {width:25px; opacity: 0;}
-    to {width: 419px; opacity: 1;}
+    to {width: 475px; opacity: 1;}
 }
 
 /* Step 2 */
