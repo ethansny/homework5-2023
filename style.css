@@ -117,22 +117,11 @@ is 900px*/
     /* Step 13 */
     /* Sets the first header of each element to have a fixed position 
     across the entire screen to create a "sticky" menu */
-    header:first-of-type{
+    body > header:first-of-type{
         position:sticky;
-        top: 0;
+        top:0;
     }
 
-    /* Removes the styling from all headers other than the first one
-    I would personally have given the header I wanted to style a class or id 
-    and style based on that, but in this assignment we were instructed to not
-    the HTML  */
-    .card > header{
-        position:static;
-    }
-
-    .card > ul > li > header{
-        position:static;
-    }
 
 }
 /* step 14*/
