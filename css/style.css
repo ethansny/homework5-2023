@@ -156,6 +156,7 @@ and removes the animation from the logo */
     /* Gives the card class a border */
     .card{
         border: solid 2px #45ADDD;
+        flex-basis: 325px;
     }
     /* Step 20 */
     /* Makes the gallery not visible when printing */
@@ -170,7 +171,7 @@ and removes the animation from the logo */
     .li:second-of-type{
         font-size: 1000px;
     }
-
+    /* Adds thumbs up when printing */
     .card > ul > li:nth-child(2)::after{
         content: "\1F44D";
     }
