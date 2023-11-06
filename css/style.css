@@ -1,3 +1,14 @@
+/* Step 1 */
+/* Animate the logo to make it increase in size over 5 seconds  */
+#logo{
+animation: mymove 5s;
+}
+
+@keyframes mymove{
+    from {width:25px; opacity: 0;}
+    to {width: 475px; opacity: 1;}
+}
+
 /* Step 2 */
 /* Image as background with color as backup */
 body{
@@ -7,6 +18,8 @@ body{
 }
 
 /* Step 3 */
+/* Set the header to flex vertically to create both the menu bar
+as well as the items within the class card */
 header{
     display: flex;
     flex-direction: column;
@@ -14,15 +27,20 @@ header{
 }
 
 /* Step 4 */
+/* Sets the nav links to flex in the same way 
+as the items in the header */
 .nav_links{
     display: flex;
     flex-direction: column;
 }
 /* Step 5 */
+/* Option, sets the links to not change after they have been visited */
 .nav_links:visited{
     text-decoration: none;
 }
 /* Step 6 */
+/* Sets the headers that are children of the class card to have
+a different background color, rounded corners, etc. */
 
 .card > header{
     background: #288088;
@@ -32,13 +50,15 @@ header{
     border-top-right-radius:50px;
     overflow: hidden;
 }
-
+/* makes the entire card have rounded corners */
 .card{
     border-top-left-radius:50px;
     border-top-right-radius:50px;
 }
 
 /* Steps 7 & 8 */
+/* Styles .card and .pricing to have the items and elemnts within
+flex as well as have a fixed width of the cards  */
 .card{
     display: flex;
     flex-direction: column;
@@ -51,7 +71,7 @@ header{
 }
 
 /* Step 9 */
-
+/* Styles the images in the gallery div with a border and width */
 .gallery img{
     border: solid 10px #50c7c7;
     margin: 10px;
@@ -59,19 +79,99 @@ header{
 }
 
 /* Step 10 */
-
+/* Sets the display of .gallery to flex and have the
+overflow to wrap instead of being cut off. Also have the 
+content of the flexbox be centered */
 .gallery{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
+/* Media query that changes the styling when the width
+is 900px*/
 @media only screen and (min-width: 900px){
+    /* Step 11*/
+    /* Changes the nav bar styling to flex horizontally and have correct spacing
+     */
     header{
         flex-direction: row;
-        justify-content: space-between;
+        justify-content:space-between;
     }
     .nav_links{
         flex-direction: row;
+    }
+    /* Step 12 */
+    /* Re/styles the cards to have them flex as a row instead
+    of a column */
+    .card{
+        width:275px ;
+    }
+
+    .pricing{
+        flex-direction: row;
+        justify-content: space-around;
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Step 13 */
+    /* Sets the first header of each element to have a fixed position 
+    across the entire screen to create a "sticky" menu */
+    body > header:first-of-type{
+        position:sticky;
+        top:0;
+    }
+
+
+}
+/* step 14*/
+/* Media query that checks if the user prefers reduced motion
+and removes the animation from the logo */
+@media (prefers-reduced-motion: reduce){
+    #logo{
+        animation: none;
+    }
+    }
+/* Media query that styles the page when being printed in portrait mode */
+
+@media print and (orientation: portrait){
+    /* Steps 15 and 16 */
+    /* Removes the background image and changes the font to Arial
+     with a backup value of Helvetica */
+    body{
+        font-family:Arial, Helvetica;
+        background-image: none;
+    }
+    /* Step 17 */
+    /* Changes the nav links to be horizontal underthe logo instead of as a column */
+    .nav_links{
+        flex-direction: row;
+    }
+    /* Step 18 */
+    /* Has the pricing cards aline hrizontally along the bottom */
+    .pricing{
+        flex-direction: row;
+    }
+    /* Step 19 */
+    /* Gives the card class a border */
+    .card{
+        border: solid 2px #45ADDD;
+    }
+    /* Step 20 */
+    /* Makes the gallery not visible when printing */
+    #gallery{
+        display: none;
+    }
+    .gallery{
+        display: none;
+    }
+    /* Step 21 */
+
+    .li:second-of-type{
+        font-size: 1000px;
+    }
+
+    .card > ul > li:nth-child(2)::after{
+        content: "\1F44D";
     }
 }
